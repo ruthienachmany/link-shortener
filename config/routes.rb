@@ -1,4 +1,18 @@
 LinkShortener::Application.routes.draw do
+  resources :users
+  resources :links
+
+  root :to => 'users#index'
+
+  get 'signup', to: 'users#new', as: 'signup'
+  get 'logout', to: 'sessions#destroy', as: 'logout'
+  get 'login', to: 'sessions#new', as: 'login'
+  post '/sessions', to: 'sessions#create', as: 'sessions'
+  delete '/sessions/:id', to: 'sessions#destroy'
+
+  get '/links/:short_url', to: 'links#show', as: 'link'
+  post '/links', to: 'links#create', as: 'links'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
