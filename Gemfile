@@ -29,6 +29,7 @@ gem 'jquery-rails'
   gem "better_errors"
 end
 gem "binding_of_caller"
+gem 'debugger'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'

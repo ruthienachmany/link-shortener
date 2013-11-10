@@ -12,4 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require ../../../vendor/assets/javascripts/bootstrap-tooltip.js
+//= require ../../../vendor/assets/javascripts/jquery-1.8.2.min.js
+//= require ../../../vendor/assets/javascripts/jquery-ui-1.10.0.custom.min.js
+//= require ../../../vendor/assets/javascripts/jquery.dropkick-1.0.0.js
+//= require ../../../vendor/assets/javascripts/custom_checkbox_and_radio.js
+//= require ../../../vendor/assets/javascripts/custom_radio.js
+//= require ../../../vendor/assets/javascripts/jquery.tagsinput.js
+//= require ../../../vendor/assets/javascripts/bootstrap-tooltip.js
+//= require ../../../vendor/assets/javascripts/jquery.placeholder.js
+//= require ../../../vendor/assets/javascripts/application.js

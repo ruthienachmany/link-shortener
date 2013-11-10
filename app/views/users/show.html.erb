@@ -4,7 +4,9 @@ Welcome to your show page <br>
 
 <%= link_to 'Shorten a link', new_link_path   %> <br>
 
-See your links <br>
+<% if @user.links %>
+<%= @user.links %>
+<%end%> <br>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

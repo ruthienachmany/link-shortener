@@ -10,8 +10,12 @@ LinkShortener::Application.routes.draw do
   post '/sessions', to: 'sessions#create', as: 'sessions'
   delete '/sessions/:id', to: 'sessions#destroy'
 
-  get '/links/:short_url', to: 'links#show', as: 'link'
+  get '/links/:id', to: 'links#show', as: 'link'
   post '/links', to: 'links#create', as: 'links'
+
+  get '/:short_link', to ''
+
+  #when i get 
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
