@@ -12,8 +12,11 @@ LinkShortener::Application.routes.draw do
 
   get '/links/:id', to: 'links#show', as: 'link'
   post '/links', to: 'links#create', as: 'links'
+  
+  # get '/:short_link', :to "#{@link.long_link}" => redirect("301")
+  # match 'links/:short_link', :to '/:short_link' => redirect("")
 
-  get '/:short_link', to ''
+  # match "/:short_link", :to => redirect("#{@link.long_link}")
 
   #when i get 
 

@@ -13,7 +13,18 @@ class LinksController < ApplicationController
   # GET /links/1
   # GET /links/1.json
   def show
-    @link = Link.find(params[:id])
+    # code
+    # redirect_to "#{@Link.long_link}", :status => :301 
+
+
+    # redirect_to @link.long_link, :status => :301
+    # shortened_link = @link.short_link
+    # shortened_link = Link.find_by_unique_key()
+
+
+    # @link = Link.find(params[:id])
+    # redirect_to "#{@link.long_link}", :status => 301
+    # #@link.visit_count += 1
 
     respond_to do |format|
       format.html # show.html.erb
@@ -41,9 +52,9 @@ class LinksController < ApplicationController
   # POST /links.json
   def create
     @link = Link.new(params[:link])
-    @link.long_link = params[:link]
-    @link.short_link = @link.return_random_string
-    @link.user_id = @user.id
+    @link.long_link = URI(params[:link]).to_s
+    @link.short_link = @link.randomly_generated_short_link
+    # @link.user_id = @user.id
   
 
     respond_to do |format|

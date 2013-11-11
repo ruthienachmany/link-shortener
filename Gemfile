@@ -30,6 +30,9 @@ gem 'jquery-rails'
 end
 gem "binding_of_caller"
 gem 'debugger'
+gem 'rspec-rails'
+# gem 'dashing-rails'
+# gem 'puma'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'

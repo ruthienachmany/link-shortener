@@ -1,8 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-short url: <%= @link %> <%= @link.get_short_url(@link) %>
-<%= @link.short_link %>
+short url: <%= Link.find(params[:id]).short_link %>
 
 
-<%= link_to 'Edit', edit_link_path(@link) %> |
 <%= link_to 'Back', links_path %>

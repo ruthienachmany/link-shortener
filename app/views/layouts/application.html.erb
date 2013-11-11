@@ -1,14 +1,77 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>LinkShortener</title>
+  <title>Link Shortener</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="navbar">
+    <div class="navbar-inner">
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <% if current_user %>
+            <a class="brand span2" href="/"><span>Link Shortener</span></a>
+          <% else %>
+            <a class="brand span2" href="#"><span>Link Shortener</span></a>
+          <% end %>
+        </div>    
+        <!-- start: Header Menu -->
+        <div class="nav-no-collapse header-nav">
+          <ul class="nav pull-right">
+            <!-- start: Message Dropdown -->
+          <li class="dropdown hidden-phone">
+            <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+            <i class="icon-user"></i>
+          </a>
+          <ul class="dropdown-menu notifications">
+            <li class="dropdown-menu-title">
+              <span>All Users</span>
+            </li> 
+            <% User.all.each do |user| %>
+            <li>
+            <a href="/users/<%= user.id.to_s %>">
+              <span class="icon blue"><i class="icon-user"></i></span>
+              <span class="message"><%= user.email_address %></span>
+            </a>
+          </li> 
+          <% end %> 
+          <li class="dropdown-menu-sub-footer">
+            <a href="/students">See All Users</a>
+          </li>           
+        </ul>
+      </li>
+      <!-- end: Message Dropdown -->
+      <!-- start: User Dropdown -->
+            <% if current_user %>
+            <li class="dropdown">
+              <a class="btn account dropdown-toggle" data-toggle="dropdown" href="#">
+                <div class="user">
+                  <span class="hello">Welcome!</span>
+                  <span class="name"><%= current_user.email_address %></span>
+                </div>
+              </a>
+              <ul class="dropdown-menu">
+                <li class="dropdown-menu-title">           
+                </li>
+                <li><a href="/users/<%= current_user.id.to_s %>"><i class="icon-user"></i> Profile</a></li>
+                <li><a href="/logout"><i class="icon-off"></i> Logout</a></li>
+              </ul>
+            </li>
+            <% else %>
+              <li class="whitetext"><a href="/login">Login</a></li>
+              <li class="whitetext"><a href="/signup">Signup</a></li>
+            <% end %>
+            <!-- end: User Dropdown -->
+          </ul>
+        </div>
+        <!-- end: Header Menu -->
+      </div>
+    </div>
+  </div>
 
-<%= yield %>
-
+  <%= yield %>
+  
 </body>
 </html>
