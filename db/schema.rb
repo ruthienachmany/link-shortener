@@ -17,16 +17,9 @@ ActiveRecord::Schema.define(:version => 20131107221917) do
     t.string   "user_id"
     t.string   "short_link"
     t.string   "long_link"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "users", :force => true do |t|
-    t.string   "email_address"
-    t.string   "password"
-    t.string   "password_confirmation"
-    t.datetime "created_at",            :null => false
-    t.datetime "updated_at",            :null => false
+    t.integer  "http_status", :default => 301
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
 end

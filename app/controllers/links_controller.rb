@@ -10,11 +10,13 @@ class LinksController < ApplicationController
     end
   end
 
+  
+
   # GET /links/1
   # GET /links/1.json
   def show
     # code
-    # redirect_to "#{@Link.long_link}", :status => :301 
+    # redirect_to "#{@link.long_link}"#, :status => :301 
 
 
     # redirect_to @link.long_link, :status => :301
@@ -52,7 +54,7 @@ class LinksController < ApplicationController
   # POST /links.json
   def create
     @link = Link.new(params[:link])
-    @link.long_link = URI(params[:link]).to_s
+    @link.long_link = URI(params[:link][:long_link]).to_s
     @link.short_link = @link.randomly_generated_short_link
     # @link.user_id = @user.id
   
@@ -83,6 +85,12 @@ class LinksController < ApplicationController
       end
     end
   end
+
+def go
+  @link = Link.find_by_short_link!(params[:short_link])
+  redirect_to @link.long_link, :status => @link.http_status
+end
+
 
   # DELETE /links/1
   # DELETE /links/1.json

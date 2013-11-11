@@ -1,13 +1,14 @@
 class Link < ActiveRecord::Base
-  attr_accessible :short_link, :long_link, :user_id
+  attr_accessible :short_link, :long_link, :user_id, :http_status
   belongs_to :user
 
-  ALL_SHORTENED_LINKS = []
+  # ALL_SHORTENED_LINKS = []
 
   def randomly_generated_short_link
     array = ('A'..'Z').to_a + ('a'..'z').to_a
     @randomly_generated_short_link = array.shuffle[0,8].join
-    ALL_SHORTENED_LINKS << @randomly_generated_short_link
+    # ALL_SHORTENED_LINKS << @randomly_generated_short_link
+
     # if ALL_SHORTENED_LINKS.find {|link| link == @randomly_generated_short_link}
     #   @new_randomly_generated_short_link = array.shuffle[0,8].join
 

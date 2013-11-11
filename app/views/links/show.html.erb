@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-short url: <%= Link.find(params[:id]).short_link %>
+short url: <%="http://14670d52.ngrok.com/#{Link.find(params[:id]).short_link}" %>
+
 
 
 <%= link_to 'Back', links_path %>

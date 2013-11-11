@@ -1,17 +1,11 @@
 LinkShortener::Application.routes.draw do
-  resources :users
   resources :links
 
-  root :to => 'users#index'
-
-  get 'signup', to: 'users#new', as: 'signup'
-  get 'logout', to: 'sessions#destroy', as: 'logout'
-  get 'login', to: 'sessions#new', as: 'login'
-  post '/sessions', to: 'sessions#create', as: 'sessions'
-  delete '/sessions/:id', to: 'sessions#destroy'
+  root :to => 'links#new'
 
   get '/links/:id', to: 'links#show', as: 'link'
   post '/links', to: 'links#create', as: 'links'
+  match ':short_link' => 'links#go'
   
   # get '/:short_link', :to "#{@link.long_link}" => redirect("301")
   # match 'links/:short_link', :to '/:short_link' => redirect("")
