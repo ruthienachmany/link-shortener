@@ -10,6 +10,15 @@ ActiveAdmin.register_page "Dashboard" do
       end
     end
 
+  ActiveAdmin::Dashboards.build do
+    section "Recent Links" do
+      table_for Link.order("created_at desc").limit(5) do
+        column :long_link
+        column :created_at
+      end
+      strong { link_to "View All Links", admin_links_path }
+    end
+  end
     # end
   end # content
 end

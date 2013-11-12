@@ -16,15 +16,18 @@
   <fieldset>
 
 
-    <p>
-      <%= f.label :long_link %>
-      <%= f.text_field :long_link, :class => "input-large span12", :required => true %>
-    </p>
+          <div class="actions">
+
+        <class="btn btn-primary btn-lg btn-block"> </class>
+    <div class="login-form">
+        
     
-    <div class="clearfix"></div>
+   <%= f.text_field :long_link, :class => "form-control login-field", :required => true %>
+</div><br><br>
+    <%= f.submit 'Shall I shorten that for you?', :class => 'btn btn-warning btn-lg btn-block'%>
+    
+    
+</div>
 
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>
+  </div>

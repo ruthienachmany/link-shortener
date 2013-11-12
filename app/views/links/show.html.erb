@@ -1,7 +1,13 @@
-<p id="notice"><%= notice %></p>
+<h1> Nice! See your short URL below.</h1>
+<div class="actions">
 
-short url: <%="http://14670d52.ngrok.com/#{Link.find(params[:id]).short_link}" %>
+        <class="btn btn-primary btn-lg btn-block"> </class>
+    <div class="login-form">
+<h6><span class="demo-heading-note"> <a href="<%="http://14670d52.ngrok.com/#{Link.find(params[:id]).short_link}"%>" ><%="http://14670d52.ngrok.com/#{Link.find(params[:id]).short_link}"%> </a></span></h6>
+        </div>
 
-
-
-<%= link_to 'Back', links_path %>
+<h4> 
+<br>
+</div>
+<div class="col-md-3"><a href="/" class="btn btn-block btn-lg btn-warning">Shorten another one?</a>
+</div>

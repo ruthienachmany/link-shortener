@@ -1,38 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Link Shortener</title>
+  <title>Shorty</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 
-<p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
-<body>
-  <div class="navbar">
-    <div class="navbar-inner">
-      <div class="container-fluid">
-        <div class="row-fluid">
-            <a class="brand span2" href="#"><span>Link Shortener</span></a>
-        
-        </div>    
-        <!-- start: Header Menu -->
-        <div class="nav-no-collapse header-nav">
-          <ul class="nav pull-right">
-            <!-- start: Message Dropdown -->
-          <li class="dropdown hidden-phone">
-            <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-            <i class="icon-user"></i>
-          </a>
-          
-            <!-- end: User Dropdown -->
-          </ul>
-        </div>
-        <!-- end: Header Menu -->
+
+<div class="login">
+  <div class="login-screen">
+    <div class="login-icon">
+      <img src="http://designmodo.github.io/Flat-UI/images/icons/svg/clocks.svg" alt="Get Shorty">
+        <h4>Save Time. <small></small></h4>
       </div>
-    </div>
-  </div>
+
+
+
 
   <%= yield %>
   
