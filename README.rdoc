@@ -22,6 +22,6 @@ def go
    `` 
    in my LinksController. This redirects, and increments visit count to that shortened URL.
 
-  * I've used RSpec for testing. 
+* I've used RSpec for testing. 
 
-  * Other than that, I think it's pretty straightforward. Please reach out if you have any questions.
+* Other than that, I think it's pretty straightforward. Please reach out if you have any questions.
