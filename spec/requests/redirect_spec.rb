@@ -1,10 +1,11 @@
 require 'spec_helper'
 
 describe "Redirect" do
-  describe "GET /" do
+  describe "GET/" do
     it "redirects your link" do
-      visit "/go"
-      response.status.should be(300)
+      link = FactoryGirl.create(:link)
+      get "/#{link.short_link}"
+      response.status.should be(301)
 end
 end
 
