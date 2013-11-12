@@ -13,11 +13,11 @@ Welcome to Shorty. Save time, shorten links. Submit a link on the main page. Get
 * I've used Flat-UI Twitter Bootstrap as my theme. Thank you to Designmodo for their icons.
 
 * I've created the redirect in my routes by using `` match ':short_link' => 'links#go' `` in my routes and  
-`` def go
+``def go
      @link = Link.find_by_short_link!(params[:short_link])
      redirect_to @link.long_link, :status => @link.http_status
      @link.increment!(:visit_count) 
-   end `` 
+   end`` 
 
    in my LinksController. This redirects, and increments visit count to that shortened URL.
 
