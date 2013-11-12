@@ -26,9 +26,20 @@ end
  group :development do
   gem "better_errors"
 end
+
+group :development, :test do
+  gem 'rspec-rails'
+end
+
+group :test do
+  gem "factory_girl_rails"
+  gem "capybara"
+  gem "guard-rspec"
+  # gem "rb-fsevent gem"
+end
+
 gem "binding_of_caller"
 gem 'debugger'
-gem 'rspec-rails'
 gem 'activeadmin'
 gem 'jquery-rails',  "~> 2.3.0"
 # gem 'dashing-rails'
