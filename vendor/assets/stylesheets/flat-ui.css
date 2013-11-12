@@ -2331,19 +2331,20 @@ body.vjs-full-window {
 
 .login {
   background: url(http://designmodo.github.io/Flat-UI/images/login/imac.png) 0 0 no-repeat;
-  background-size: 75%;
+  background-size: 100%;
   color: white;
   margin-top: 10px;
   margin-left: 100px;
   margin-bottom: 77px;
+  margin-right: 100px;
   padding: 38px 38px 267px;
   position: relative; }
 
 .login-screen {
   background-color: #1abc9c;
+  background-size: 10%;
   min-height: 317px;
-  margin-right: 26.5%;
-  padding: 123px 199px 80px 306px; }
+  padding: 123px 199px 40px 306px; }
 
 .login-icon {
   left: 200px;
