@@ -4,6 +4,7 @@ class CreateLinks < ActiveRecord::Migration
       t.string :user_id
       t.string :short_link
       t.string :long_link
+      t.integer :visit_count, :default => 0
       t.integer :http_status, :default => 301
       t.timestamps
     end

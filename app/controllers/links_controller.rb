@@ -89,6 +89,7 @@ class LinksController < ApplicationController
 def go
   @link = Link.find_by_short_link!(params[:short_link])
   redirect_to @link.long_link, :status => @link.http_status
+  @link.increment!(:visit_count) 
 end
 
 

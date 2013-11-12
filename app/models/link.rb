@@ -1,5 +1,5 @@
 class Link < ActiveRecord::Base
-  attr_accessible :short_link, :long_link, :http_status
+  attr_accessible :short_link, :long_link, :http_status, :visit_count
 
 
   def randomly_generated_short_link

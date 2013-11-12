@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(:version => 20131112034709) do
     t.string   "user_id"
     t.string   "short_link"
     t.string   "long_link"
+    t.integer  "visit_count", :default => 0
     t.integer  "http_status", :default => 301
     t.datetime "created_at",                   :null => false
     t.datetime "updated_at",                   :null => false
