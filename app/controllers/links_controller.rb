@@ -56,7 +56,7 @@ class LinksController < ApplicationController
     @link = Link.new(params[:link])
     @link.long_link = URI(params[:link][:long_link]).to_s
     @link.short_link = @link.randomly_generated_short_link
-    # @link.user_id = @user.id
+
   
 
     respond_to do |format|
