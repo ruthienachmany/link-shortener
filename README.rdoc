@@ -17,9 +17,7 @@ Welcome to Shorty. Save time, shorten links. Submit a link on the main page. Get
      @link = Link.find_by_short_link!(params[:short_link])
      redirect_to @link.long_link, :status => @link.http_status
      @link.increment!(:visit_count) 
-   end`` 
-
-   in my LinksController. This redirects, and increments visit count to that shortened URL.
+   end`` in my LinksController. This redirects, and increments visit count to that shortened URL.
 
   * I've used RSpec for testing. 
 
