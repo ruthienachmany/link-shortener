@@ -1,6 +1,6 @@
 Welcome to Shorty. Save time, shorten links. Submit a link on the main page. Get back your shortened link.
 
-I've used [ngrok](https://ngrok.com/) here to create an introspected tunnel to my localhost:3000, which exposes it to you (the user). You can check out your shortened link at http://14670d52.ngrok.com/YOUR-SHORTENED-URL-HERE. 
+I've used ngrok (https://ngrok.com/) here to create an introspected tunnel to my localhost:3000, which exposes it to you (the user). You can check out your shortened link at ``http://14670d52.ngrok.com/YOUR-SHORTENED-URL-HERE``. 
 
 There is an admin view, which I've created using Active Admin. Go to '/admin' and log in with admin@example.com and password to view all links, their shortened URLs, and their visit count. 
 
