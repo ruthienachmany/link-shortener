@@ -1,26 +1,23 @@
 Welcome to Shorty. Save time, shorten links. Submit a link on the main page. Get back your shortened link.
 
-I've used ngrok (https://ngrok.com/) here to create an introspected tunnel to my localhost:3000, which exposes it to you (the user). 
+* I've used ngrok (https://ngrok.com/) here to create an introspected tunnel to my localhost:3000, which exposes it to you (the user). 
 
-You can check out your shortened link at `` http://14670d52.ngrok.com/YOUR-SHORTENED-URL-HERE ``. You can create your own ngrok localhost tunnel by downlaoding the zip file here: https://ngrok.com/ and unzipping it like so: ``unzip /path/to/ngrok.zip``. 
+* You can check out your shortened link at `` http://14670d52.ngrok.com/YOUR-SHORTENED-URL-HERE ``. You can create your own ngrok localhost tunnel by downlaoding the zip file here: https://ngrok.com/ and unzipping it like so: ``unzip /path/to/ngrok.zip``. 
 
-After that, run ``./ngrok 3000`` or whatever port you want to bind to, and check the forwarding address in your terminal to find the tunneled link. 
+* After that, run ``./ngrok 3000`` or whatever port you want to bind to, and check the forwarding address in your terminal to find the tunneled link. 
 
-If there is a problem with the ngrok link I've set up on localhost:3000 tunnel, you can set up your own, and update the ``app/views/links/show.html.erb`` file accordingly by updating ``<a href="<%="http://14670d52.ngrok.com/#{Link.find(params[:id]).short_link}"%>" ><%="http://14670d52.ngrok.com/#{Link.find(params[:id]).short_link}"%> </a> `` with your own ngrok tunnel.
+* If there is a problem with the ngrok link I've set up on localhost:3000 tunnel, you can set up your own, and update the ``app/views/links/show.html.erb`` file accordingly by updating ``<a href="<%="http://14670d52.ngrok.com/#{Link.find(params[:id]).short_link}"%>" ><%="http://14670d52.ngrok.com/#{Link.find(params[:id]).short_link}"%> </a> `` with your own ngrok tunnel.
 
-There is an admin view, which I've created using Active Admin. Go to '/admin' and log in with admin@example.com and password to view all links, their shortened URLs, and their visit count. 
+* There is an admin view, which I've created using Active Admin. Go to '/admin' and log in with admin@example.com and password to view all links, their shortened URLs, and their visit count. 
 
-I've used Flat-UI Twitter Bootstrap as my theme. Thank you to Designmodo for their icons.
+* I've used Flat-UI Twitter Bootstrap as my theme. Thank you to Designmodo for their icons.
 
-I've created the redirect in my routes by using `` match ':short_link' => 'links#go' `` in my routes and  `` def go
+* I've created the redirect in my routes by using `` match ':short_link' => 'links#go' `` in my routes and  `` def go
      @link = Link.find_by_short_link!(params[:short_link])
      redirect_to @link.long_link, :status => @link.http_status
      @link.increment!(:visit_count) 
-   end 
-   `` 
+   end `` in my LinksController. This redirects, and increments visit count to that shortened URL.
 
-  in my LinksController. This redirects, and increments visit count to that shortened URL.
+  * I've used RSpec for testing. 
 
-  I've used RSpec for testing. 
-
-  Other than that, I think it's pretty straightforward. Please reach out if you have any questions.
+  * Other than that, I think it's pretty straightforward. Please reach out if you have any questions.
